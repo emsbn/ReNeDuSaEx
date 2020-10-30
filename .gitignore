@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Node template
+# Dependency directories
+node_modules/
+
+# Next.js build output
+.next
+out
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
