@@ -1,11 +1,15 @@
-import React from "react";
-import AppLayout from "../components/AppLayout";
+import React from 'react';
+import AppLayout from '../components/AppLayout';
+import Head from 'next/head';
 
 const Profile = () => {
   return (
-    <AppLayout>
-      <div>프로필 페이지</div>
-    </AppLayout>
+    <>
+      <Head>
+        <title>내 프로필 | ReNeDuSaEx</title>
+      </Head>
+      <AppLayout>프로필 페이지</AppLayout>
+    </>
   );
 };
 
