@@ -36,7 +36,7 @@ const AppLayout = ({ children }) => {
           </Link>
         </Menu.Item>
       </Menu>
-      <Row gutter={8}>
+      <Row>
         <Col xs={24} md={6}>
           {isLoggedIn ? <UserProfile /> : <LoginForm />}
         </Col>
