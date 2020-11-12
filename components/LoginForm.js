@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import useInput from '../hooks/useInput';
 import { useDispatch } from 'react-redux';
-import { loginAction } from '../reducers';
+import { loginAction } from '../reducers/user';
 
 const ButtonWrapper = styled.div`
   margin-top: 10px;
@@ -32,7 +32,7 @@ const LoginForm = () => {
       </div>
       <div>
         <label htmlFor="user-password">비밀번호</label>
-        <Input name="user-password" value={password} onChange={onChangePassword} required />
+        <Input.Password name="user-password" value={password} onChange={onChangePassword} required />
       </div>
       <ButtonWrapper>
         <Button type="primary" htmlType="submit" loading={false}>
