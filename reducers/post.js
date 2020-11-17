@@ -10,15 +10,15 @@ export const initialState = {
       images: [
         {
           src:
-            'https://cafeptthumb-phinf.pstatic.net/MjAyMDExMTJfMTY5/MDAxNjA1MTQyNzI2MjA2.V-R25xtwSDdP3BX5WhHOjkpGBEoTnx1L9bSCLX-Ign8g.x44gQ9qQwQRd5aRSVfqHmWRSAXhW_b2N8TBfz1y8U14g.PNG/image.png',
+            'https://s.pstatic.net/static/newsstand/2020/1117/article_img/new_main/9003/231716_001.jpg',
         },
         {
           src:
-            'https://cafeptthumb-phinf.pstatic.net/MjAyMDExMTJfMTU2/MDAxNjA1MTQxMTg2MTAx.uMI-5YYsEXFKHtjvRimvwNaEq6HHHi5I64iMw2ZcVh8g.cGVGD1jBs6krrYQ4kWXeL4uvqNkpQrUV-U1sRR7v_2Ig.GIF/d293a8554ca022ea2e2fe68759a64ab3f7dd36b3.gif',
+            'https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fstatic%2Fwww%2Fmobile%2Fedit%2F2020%2F1117%2Fupload_21526941067486605uHL2Z.jpg%22&type=nf340_228',
         },
         {
           src:
-            'https://cafeptthumb-phinf.pstatic.net/MjAyMDExMTJfMTky/MDAxNjA1MTQwOTYyODU5.fvRgMSIicn6FcPjaI_7taXJHSjLaaXYYOtC2bVRmwrog.nAblq86FKJxMEyTETjGQoQ9IEOrjraqZSvcsXMoysgcg.GIF/776dd6e194d9034f634d6809c678131e4757861a.gif',
+            'https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fstatic%2Fwww%2Fmobile%2Fedit%2F2020%2F1114%2Fupload_21269899249413678soGBD.jpg%22&type=nf340_228',
         },
       ],
       comments: [

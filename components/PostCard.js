@@ -77,8 +77,6 @@ const PostCard = ({ post }) => {
           />
         </div>
       )}
-      {/*<CommentForm />*/}
-      {/*<Comments />*/}
     </div>
   );
 };
