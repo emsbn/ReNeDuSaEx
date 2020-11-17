@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { Card, Popover, Button, Avatar } from 'antd';
+import { Card, Popover, Button, Avatar, List, Comment } from 'antd';
 import {
   HeartOutlined,
   MessageOutlined,
@@ -10,6 +10,7 @@ import {
   HeartTwoTone,
 } from '@ant-design/icons';
 import PostImages from './PostImages';
+import CommentForm from './CommentForm';
 
 const PostCard = ({ post }) => {
   const [liked, setLiked] = useState(false);
@@ -57,7 +58,25 @@ const PostCard = ({ post }) => {
           description={post.content}
         />
       </Card>
-      {commentFormOpened && <div>댓글 부분</div>}
+      {commentFormOpened && (
+        <div>
+          <CommentForm post={post} />
+          <List
+            header={`${post.comments.length}개의 댓글`}
+            itemLayout="horizontal"
+            dataSource={post.comments}
+            renderItem={(item) => (
+              <li>
+                <Comment
+                  author={item.user.nickname}
+                  avatar={<Avatar>{item.user.nickname[0]}</Avatar>}
+                  content={item.content}
+                />
+              </li>
+            )}
+          />
+        </div>
+      )}
       {/*<CommentForm />*/}
       {/*<Comments />*/}
     </div>
