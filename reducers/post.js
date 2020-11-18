@@ -10,11 +10,11 @@ export const initialState = {
       images: [
         {
           src:
-            'https://s.pstatic.net/static/newsstand/2020/1117/article_img/new_main/9003/231716_001.jpg',
+            'https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fstatic%2Fwww%2Fmobile%2Fedit%2F2020%2F1117%2Fupload_21526941067486605uHL2Z.jpg%22&type=nf340_228',
         },
         {
           src:
-            'https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fstatic%2Fwww%2Fmobile%2Fedit%2F2020%2F1117%2Fupload_21526941067486605uHL2Z.jpg%22&type=nf340_228',
+            'https://s.pstatic.net/static/newsstand/2020/1117/article_img/new_main/9003/231716_001.jpg',
         },
         {
           src:
