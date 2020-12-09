@@ -12,7 +12,7 @@ import {
 
 import PostImages from './PostImages';
 import CommentForm from './CommentForm';
-import PostCardContent from "./PostCardContent";
+import PostCardContent from './PostCardContent';
 
 const PostCard = ({ post }) => {
   const [liked, setLiked] = useState(false);
@@ -28,7 +28,7 @@ const PostCard = ({ post }) => {
   return (
     <div style={{ marginBottom: 20 }}>
       <Card
-        cover={post.images[0] && <PostImages images={post.images} />}
+        cover={post.Images[0] && <PostImages images={post.Images} />}
         actions={[
           <RetweetOutlined key="retweet" />,
           liked ? (
@@ -41,7 +41,7 @@ const PostCard = ({ post }) => {
             key="more"
             content={
               <Button.Group>
-                {id && post.user.id === id ? (
+                {id && post.User.id === id ? (
                   <>
                     <Button>수정</Button>
                     <Button type="danger">삭제</Button>
@@ -55,8 +55,8 @@ const PostCard = ({ post }) => {
           </Popover>,
         ]}>
         <Card.Meta
-          avatar={<Avatar>{post.user.nickname[0]}</Avatar>}
-          title={post.user.nickname}
+          avatar={<Avatar>{post.User.nickname[0]}</Avatar>}
+          title={post.User.nickname}
           description={<PostCardContent postData={post.content} />}
         />
       </Card>
@@ -64,9 +64,9 @@ const PostCard = ({ post }) => {
         <div>
           <CommentForm post={post} />
           <List
-            header={`${post.comments.length}개의 댓글`}
+            header={`${post.Comments.length}개의 댓글`}
             itemLayout="horizontal"
-            dataSource={post.comments}
+            dataSource={post.Comments}
             renderItem={(item) => (
               <li>
                 <Comment
@@ -86,10 +86,10 @@ const PostCard = ({ post }) => {
 PostCard.propTypes = {
   post: PropTypes.shape({
     id: PropTypes.number,
-    user: PropTypes.object,
+    User: PropTypes.object,
     content: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.object),
-    comments: PropTypes.arrayOf(PropTypes.object),
+    Images: PropTypes.arrayOf(PropTypes.object),
+    Comments: PropTypes.arrayOf(PropTypes.object),
     createdAt: PropTypes.string,
   }),
 };

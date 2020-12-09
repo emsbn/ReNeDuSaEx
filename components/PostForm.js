@@ -12,9 +12,9 @@ const PostForm = () => {
     setText(e.target.value);
   }, []);
   const onSubmit = useCallback(() => {
-    dispatch(addPost);
+    dispatch(addPost(text));
     setText('');
-  }, []);
+  }, [text]);
   const onClickImageUpload = useCallback(() => {
     imageInput.current.click();
   }, [imageInput.current]);

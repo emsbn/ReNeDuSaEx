@@ -67,12 +67,12 @@ export const addComment = (data) => ({
 const dummyPost = {
   id: 2,
   content: '더미데이터',
-  user: {
+  User: {
     id: 1,
     nickname: '누렁이',
   },
-  images: [],
-  comments: [],
+  Images: [],
+  Comments: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -97,7 +97,7 @@ const reducer = (state = initialState, action) => {
         addPostLoading: false,
         addPostError: action.error,
       };
-      case ADD_COMMENT_REQUEST:
+    case ADD_COMMENT_REQUEST:
       return {
         ...state,
         addCommentLoading: true,
