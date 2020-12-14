@@ -39,7 +39,7 @@ const PostCard = ({ post }) => {
           <MessageOutlined key="comment" onClick={onToggleComment} />,
           <Popover
             key="more"
-            content={
+            content={(
               <Button.Group>
                 {id && post.User.id === id ? (
                   <>
@@ -50,10 +50,12 @@ const PostCard = ({ post }) => {
                   <Button>신고</Button>
                 )}
               </Button.Group>
-            }>
+            )}
+          >
             <EllipsisOutlined />
           </Popover>,
-        ]}>
+        ]}
+      >
         <Card.Meta
           avatar={<Avatar>{post.User.nickname[0]}</Avatar>}
           title={post.User.nickname}
@@ -70,8 +72,8 @@ const PostCard = ({ post }) => {
             renderItem={(item) => (
               <li>
                 <Comment
-                  author={item.user.nickname}
-                  avatar={<Avatar>{item.user.nickname[0]}</Avatar>}
+                  author={item.User.nickname}
+                  avatar={<Avatar>{item.User.nickname[0]}</Avatar>}
                   content={item.content}
                 />
               </li>

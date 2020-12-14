@@ -2,12 +2,12 @@ export const initialState = {
   mainPosts: [
     {
       id: 1,
-      user: {
+      User: {
         id: 1,
         nickname: '누렁이',
       },
       content: '첫 번째 게시글 #누렁 #해시태그',
-      images: [
+      Images: [
         {
           src:
             'https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fstatic%2Fwww%2Fmobile%2Fedit%2F2020%2F1117%2Fupload_21526941067486605uHL2Z.jpg%22&type=nf340_228',
@@ -21,15 +21,15 @@ export const initialState = {
             'https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fstatic%2Fwww%2Fmobile%2Fedit%2F2020%2F1114%2Fupload_21269899249413678soGBD.jpg%22&type=nf340_228',
         },
       ],
-      comments: [
+      Comments: [
         {
-          user: {
+          User: {
             nickname: '흰둥이',
           },
           content: '멍멍!',
         },
         {
-          user: {
+          User: {
             nickname: '옆집 뽀삐',
           },
           content: '왈왈!',
