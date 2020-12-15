@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import { Input, Form, Button } from 'antd';
 import Link from 'next/link';
 import styled from 'styled-components';
-import useInput from '../hooks/useInput';
 import { useDispatch, useSelector } from 'react-redux';
+import useInput from '../hooks/useInput';
 import { loginRequestAction } from '../reducers/user';
 
 const ButtonWrapper = styled.div`
@@ -29,7 +29,7 @@ const LoginForm = () => {
     <FormWrapper onFinish={onSubmitForm}>
       <div>
         <label htmlFor="user-email">이메일</label>
-        <Input name="user-email" value={email} onChange={onChangeEmail} required />
+        <Input type="email" name="user-email" value={email} onChange={onChangeEmail} required />
       </div>
       <div>
         <label htmlFor="user-password">비밀번호</label>
