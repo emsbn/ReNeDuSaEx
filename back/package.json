@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": ""
+    "dev": "nodemon app"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +22,8 @@
     "singleQuote": true,
     "trailingComma": "all",
     "jsxBracketSameLine": true
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
