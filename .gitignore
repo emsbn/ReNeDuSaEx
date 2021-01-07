@@ -12,6 +12,7 @@ lerna-debug.log*
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Dependency directories
+dist/
 node_modules/
 
 # Optional npm cache directory
