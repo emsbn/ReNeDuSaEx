@@ -5,6 +5,8 @@ const { User } = require('../models');
 const router = express.Router();
 
 router.post('/', async (req, res, next) => {
+  console.log('post /user/ 요청');
+
   // Post /user/
   try {
     const exUser = await User.findOne({
