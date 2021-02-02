@@ -4,6 +4,10 @@ const { User } = require('../models');
 
 const router = express.Router();
 
+router.post('/login', (req, res, next) => {
+  // POST /user/login
+})
+
 router.post('/', async (req, res, next) => {
   console.log('post /user/ 요청');
 

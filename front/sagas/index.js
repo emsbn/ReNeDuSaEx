@@ -12,6 +12,9 @@ import {
   takeLeading,
   takeMaybe,
 } from 'redux-saga/effects';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:8182';
 
 import userSaga from './user';
 import postSaga from './post';
