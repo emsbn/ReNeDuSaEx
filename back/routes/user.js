@@ -1,12 +1,30 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const { User } = require('../models');
+const passport = require('passport');
 
 const router = express.Router();
 
 router.post('/login', (req, res, next) => {
-  // POST /user/login
-})
+  // 미들웨어 확장
+  passport.authenticate('local', (error, user, info) => {
+    if (error) {
+      console.error(error);
+      next(error);
+    }
+    if (info) {
+      return res.status(401).send(info.reason);
+    }
+    // passport login
+    return req.login(user, async (loginError) => {
+      if (loginError) {
+        console.error(loginError);
+        return next(loginError);
+      }
+      return res.json(user);
+    });
+  })(req, res, next);
+});
 
 router.post('/', async (req, res, next) => {
   console.log('post /user/ 요청');
