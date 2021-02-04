@@ -21,7 +21,7 @@ router.post('/login', (req, res, next) => {
         console.error(loginError);
         return next(loginError);
       }
-      return res.status(200).json(user);
+      return res.status(200).json(user); // cookie + user? 정보 보냄
     });
   })(req, res, next);
 });
@@ -50,6 +50,12 @@ router.post('/', async (req, res, next) => {
     console.error(error);
     next(error); // status 500
   }
+});
+
+router.post('/post/logout', (req, res, next) => {
+  req.logout();
+  req.session.destroy();
+  res.send('ok');
 });
 
 module.exports = router;

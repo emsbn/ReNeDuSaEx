@@ -4,7 +4,7 @@ const { User } = require('../models');
 
 module.exports = () => {
   passport.serializeUser((user, done) => {
-    // id 정보만 들고 있음
+    // 브라우저에 전달할 cookie + user id 정보만 서버에서 들고 있음
     done(null, user.id);
   });
 
@@ -12,7 +12,7 @@ module.exports = () => {
     try {
       // id 정보로 user 정보 복원
       const user = await User.findOne({ where: { id } });
-      done(null, user);
+      done(null, user); // req.user
     } catch (e) {
       console.error(e);
       done(e);
