@@ -6,7 +6,7 @@ module.exports = {
   development: {
     username: 'postgres',
     password: process.env.DB_PASSWORD,
-    database: 'ReNeDuSaEx',
+    database: 'ReNeDuSaExNePr',
     host: '127.0.0.1',
     port: '5432',
     dialect: 'postgres',
@@ -14,7 +14,7 @@ module.exports = {
   test: {
     username: 'postgres',
     password: process.env.DB_PASSWORD,
-    database: 'ReNeDuSaEx',
+    database: 'ReNeDuSaExNePr',
     host: '127.0.0.1',
     port: '5432',
     dialect: 'postgres',
@@ -22,7 +22,7 @@ module.exports = {
   production: {
     username: 'postgres',
     password: process.env.DB_PASSWORD,
-    database: 'ReNeDuSaEx',
+    database: 'ReNeDuSaExNePr',
     host: '127.0.0.1',
     port: '5432',
     dialect: 'postgres',
