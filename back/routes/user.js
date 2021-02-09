@@ -1,8 +1,9 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
-const { User, Post } = require('../models');
 const passport = require('passport');
 
+const { User, Post } = require('../models');
+const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
 const router = express.Router();
 
 router.post('/login', (req, res, next) => {
@@ -71,7 +72,7 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-router.post('/post/logout', (req, res, next) => {
+router.post('/logout', (req, res, next) => {
   req.logout();
   req.session.destroy();
   res.send('ok');
