@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post('/login', (req, res, next) => {
   // 미들웨어 확장
-  passport.authenticate('local', (error, user, info) => {
+  passport.authenticate('local', isNotLoggedIn, (error, user, info) => {
     if (error) {
       console.error(error);
       next(error);
@@ -46,7 +46,7 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', isNotLoggedIn, async (req, res, next) => {
   console.log('post /user/ 요청');
 
   // Post /user/
@@ -72,7 +72,7 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-router.post('/logout', (req, res, next) => {
+router.post('/logout', isLoggedIn, (req, res, next) => {
   req.logout();
   req.session.destroy();
   res.send('ok');

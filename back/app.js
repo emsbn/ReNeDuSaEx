@@ -56,6 +56,11 @@ app.get('/posts', (req, res) => {
 app.use('/post', postRouter);
 app.use('/user', userRouter);
 
+// error middleware
+app.use((err, req, res, next) => {
+  console.error(err);
+});
+
 app.listen(8182, () => {
   console.log('server listening 8182...');
 });
