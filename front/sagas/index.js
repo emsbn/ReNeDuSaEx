@@ -15,6 +15,7 @@ import {
 import axios from 'axios';
 
 axios.defaults.baseURL = 'http://localhost:8182';
+axios.defaults.withCredentials = true; // cookie 전달 허용
 
 import userSaga from './user';
 import postSaga from './post';

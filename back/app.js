@@ -23,9 +23,9 @@ passportConfig();
 
 app.use(
   cors({
-    // origin: 'http://localhost:8181'
-    origin: '*',
-    // credentials: false,
+    // origin: '*',
+    origin: 'http://localhost:8181',
+    credentials: true, // cookie 전달 허용
   }),
 );
 app.use(express.json()); // json
@@ -58,7 +58,7 @@ app.use('/user', userRouter);
 
 // error middleware
 app.use((err, req, res, next) => {
-  console.error(err);
+  // console.error(err);
 });
 
 app.listen(8182, () => {
