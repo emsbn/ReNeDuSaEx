@@ -11,7 +11,7 @@ const ReNeDuSaEx = ({ Component }) => {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <title>ReNeDuSaEx</title>
+        <title>ReNeDuSaExNePr</title>
       </Head>
       <Component />
     </>
