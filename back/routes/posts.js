@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
       ],
       include: [
         {
-          model: User,
+          model: User, // 개시글 작성자
           attributes: ['id', 'nickname'],
         },
         {
@@ -25,10 +25,15 @@ router.get('/', async (req, res, next) => {
           model: Comment,
           include: [
             {
-              model: User,
+              model: User, // 댓글 작성자
               attributes: ['id', 'nickname'],
             },
           ],
+        },
+        {
+          model: User, // 좋아요 누른 사람
+          as: 'Likers',
+          attributes: ['id'],
         },
       ],
     });
