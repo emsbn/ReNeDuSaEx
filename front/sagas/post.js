@@ -16,7 +16,9 @@ import {
   LIKE_POST_SUCCESS,
   LIKE_POST_FAILURE,
   UNLIKE_POST_SUCCESS,
-  UNLIKE_POST_FAILURE, LIKE_POST_REQUEST, UNLIKE_POST_REQUEST,
+  UNLIKE_POST_FAILURE,
+  LIKE_POST_REQUEST,
+  UNLIKE_POST_REQUEST,
 } from '../reducers/post';
 import { ADD_POST_TO_ME, REMOVE_POST_OF_ME } from '../reducers/user';
 
@@ -65,20 +67,19 @@ function* addPost(action) {
 }
 
 function removePostAPI(data) {
-  return axios.delete('/post', data);
+  return axios.delete(`/post/${data}`);
 }
 
 function* removePost(action) {
   try {
-    // const result = yield call(removePostAPI, action.data);
-    yield delay(1000);
+    const result = yield call(removePostAPI, action.data);
     yield put({
       type: REMOVE_POST_SUCCESS,
-      data: action.data,
+      data: result.data,
     });
     yield put({
       type: REMOVE_POST_OF_ME,
-      data: action.data,
+      data: result.data,
     });
   } catch (err) {
     console.error(err);

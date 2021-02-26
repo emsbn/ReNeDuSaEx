@@ -45,9 +45,21 @@ router.post('/', isLoggedIn, async (req, res) => {
   }
 });
 
-router.delete('/', isLoggedIn, (req, res) => {
-  // Delete /post/
-  res.json({ id: 1 });
+router.delete('/:postId', isLoggedIn, async (req, res, next) => {
+  // Delete /post/10
+  try {
+    const post = Post.findOne({
+      where: { id: parseInt(req.params.postId, 10) },
+    });
+    if (!post) return res.status(403).send('존재하지 않는 게시글입니다.');
+    await Post.destroy({
+      where: { id: parseInt(req.params.postId, 10), UserId: req.user.id },
+    });
+    res.json({ PostId: parseInt(req.params.postId, 10) });
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
 });
 
 router.post('/:postId/comment', isLoggedIn, async (req, res) => {
@@ -81,7 +93,7 @@ router.post('/:postId/comment', isLoggedIn, async (req, res) => {
   }
 });
 
-router.patch('/:postId/like', async (req, res, next) => {
+router.patch('/:postId/like', isLoggedIn, async (req, res, next) => {
   // PATCH /post/1/like
   try {
     const post = await Post.findOne({
@@ -96,7 +108,7 @@ router.patch('/:postId/like', async (req, res, next) => {
   }
 });
 
-router.delete('/:postId/like', async (req, res, next) => {
+router.delete('/:postId/like', isLoggedIn, async (req, res, next) => {
   // DELETE /post/1/like
   try {
     const post = await Post.findOne({

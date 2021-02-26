@@ -117,4 +117,25 @@ router.post('/logout', isLoggedIn, (req, res, next) => {
   res.send('ok');
 });
 
+router.patch('/nickname', isLoggedIn, async (req, res, next) => {
+  try {
+    const user = findOne({
+      where: { id: req.user.id },
+    });
+    if (!user) return res.status(403).send('존재하지 않는 사용자입니다.');
+    await User.update(
+      {
+        nickname: req.body.nickname,
+      },
+      {
+        where: { id: req.user.id },
+      },
+    );
+    res.status(200).json({ nickname: req.body.nickname });
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
 module.exports = router;
