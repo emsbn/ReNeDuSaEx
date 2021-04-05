@@ -111,6 +111,7 @@ function* changeNickname(action) {
     console.log('result', result);
     yield put({
       type: CHANGE_NICKNAME_SUCCESS,
+      data: result.data,
     });
   } catch (err) {
     yield put({

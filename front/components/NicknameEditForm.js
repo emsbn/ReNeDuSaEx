@@ -1,11 +1,12 @@
 import React, { useMemo, useCallback } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input } from 'antd';
 
 import useInput from '../hooks/useInput';
 import { CHANGE_NICKNAME_REQUEST } from '../reducers/user';
 
 const NicknameEditForm = () => {
+  const dispatch = useDispatch();
   const { me } = useSelector((state) => state.user);
   const [nickname, onChangeNickname] = useInput(me?.nickname || '');
   const onSubmit = useCallback(() => {
@@ -25,10 +26,11 @@ const NicknameEditForm = () => {
   );
 
   return (
-    <Form style={style} onFinish={onSubmit}>
+    <Form style={style}>
       <Input.Search
         value={nickname}
-        onSearch={onChangeNickname}
+        onChange={onChangeNickname}
+        onSearch={onSubmit}
         addonBefore="닉네임"
         enterButton="수정"
       />

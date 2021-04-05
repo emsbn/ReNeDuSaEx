@@ -28,6 +28,7 @@ app.use(
   cors({
     // origin: '*',
     origin: 'http://localhost:8181',
+    // origin: 'http://localhost:3061',
     credentials: true, // cookie 전달 허용
   }),
 );
